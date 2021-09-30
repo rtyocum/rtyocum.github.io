@@ -1,0 +1,296 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #eee;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #fc4445 #000;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #fc4445;
+  border-radius: 20px;
+  border: 3px solid #000;
+}
+
+.color-secondary {
+  color: #fc4445 !important;
+}
+
+.page {
+  background: url('../img/background.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  height: 100%;
+  position: relative;
+}
+
+.page::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000000cc;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 10vh;
+}
+
+.top {
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #00000077;
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  text-decoration: none;
+  color: #ccc;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 0 20px;
+  box-shadow: 0 1px 0 #333;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.nav li a:hover {
+  box-shadow: 0 2px 0 #ccc;
+}
+
+.top-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  position: absolute;
+  top: 85vh;
+  right: 20px;
+  height: 50px;
+  width: 50px;
+  border: 5px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.top-button .arrow {
+  margin-top: 5px;
+  transition: border-color 0.2s ease;
+}
+
+.top-button:hover {
+  background-color: #ccc;
+}
+
+.top-button:hover .arrow {
+  border-color: #000;
+}
+
+.top-button.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.seperator {
+  width: 100%;
+  height: 1px;
+  background-color: #333333aa;
+  z-index: 1;
+}
+
+#main {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 80vh 80vh 60vh 20vh;
+  row-gap: 10vh;
+}
+
+article {
+  max-width: 1100px;
+  height: 90vh;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+article h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+article p {
+  font-size: 1.2rem;
+  color: #bbb;
+  line-height: 1.8rem;
+}
+
+.arrow-light {
+  border: solid #ccc;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 10px;
+}
+
+.arrow-primary {
+  border: solid #fc4445;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 10px;
+}
+
+.arrow.small {
+  border-width: 0 5px 5px 0;
+  padding: 5px;
+}
+
+.arrow.up {
+  transform: rotate(-135deg);
+}
+
+.arrow.down {
+  transform: rotate(45deg);
+}
+
+.arrow.left {
+  transform: rotate(135deg);
+}
+
+.arrow.right {
+  transform: rotate(-45deg);
+}
+
+.buttons {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button a {
+  margin-top: 40px;
+  display: block;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.button-primary a {
+  color: #ccc;
+  border: 5px solid #fc4445;
+}
+
+.button-primary a:hover {
+  background-color: #fc4445;
+  color: #000;
+}
+
+.button-secondary a {
+  color: #000;
+  background-color: #ccc;
+  border: 5px solid #ccc;
+}
+
+.button-secondary a:hover {
+  color: #ccc;
+  background-color: transparent;
+}
+
+#about {
+  grid-row: 1;
+}
+
+#food {
+  height: 100%;
+  grid-row: 2;
+}
+
+#food h3 {
+  font-size: 1.5rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+#food img {
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px #999;
+  height: 400px;
+}
+
+#learn {
+  height: 100%;
+  grid-row: 3;
+}
+
+#learn ul li {
+  color: #ccc;
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+
+#footer {
+  padding: 0 80px;
+  grid-row: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-button {
+  display: block;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  color: #000;
+  background-color: #ccc;
+  border: 5px solid #ccc;
+}
+
+.footer-button:hover {
+  color: #ccc;
+  background-color: transparent;
+}
